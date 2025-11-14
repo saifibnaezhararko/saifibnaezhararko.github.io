@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Saif Ibna Ezhar Arko - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+        }
+
+        .left-column {
+            flex: 2;
+        }
+
+        .right-column {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .section h4 {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #e8eaf6;
+            color: #667eea;
+            padding: 5px 12px;
+            margin: 4px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+
+        .github-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+            }
+            
+            .header {
+                background: #667eea;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div>
+                    <h1>SK Saif Ibna Ezhar Arko</h1>
+                    <p class="subtitle">Computer Science & Engineering | Quantum Computing Enthusiast</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:saifibnaezhararko1@gmail.com">
+                    <i class="fas fa-envelope"></i> saifibnaezhararko1@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/sk-saif-ibna-ezhar-arko-0140aa203" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/saifibnaezhararko" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a>
+                    <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Career Objective -->
+                <section class="section">
+                    <h2 class="section-title">Career Objective</h2>
+                    <p>Seeking an AI internship to apply a robust skill set encompassing Python programming, machine learning and advanced theoretical concepts like Quantum Information Theory. With practical project experience in deep learning and a background in mentoring and research through QWorld, I aim to contribute a creative and collaborative mindset to developing cutting edge AI solutions particularly in the realms of generative models and scalable software.</p>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <h3>Bachelor of Science in Computer Science and Engineering</h3>
+                        <h4>BRAC University, Dhaka</h4>
+                        <p class="date">Expected Graduation: September 2025 | CGPA: 3.18</p>
+                        <p><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Operating Systems, Machine Learning, Quantum Computing, Pattern Recognition</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Higher Secondary Certificate</h3>
+                        <h4>Notre Dame College Dhaka</h4>
+                        <p class="date">Graduated: 2020 | GPA: 5.00</p>
+                        <p>Group: Science</p>
+                    </div>
+
+                    <div class="education-item">
+                        <h3>Secondary School Certificate</h3>
+                        <h4>St. Gregory's High School and College</h4>
+                        <p class="date">Graduated: 2018 | GPA: 5.00</p>
+                        <p>Group: Science</p>
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                    <h2 class="section-title">Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h3>Python Developer Intern <span class="badge">Current</span></h3>
+                        <h4>Maxcode Lab</h4>
+                        <p class="date">October 2025 - Present</p>
+                        <ul>
+                            <li>Work on web scraping, database management, automation, and API integration using Python</li>
+                            <li>Develop scripts to extract, clean, and store data efficiently from multiple online sources</li>
+                            <li>Implement automation workflows to improve operational efficiency and reduce manual effort</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Verified Python Tutor <span class="badge">Current</span></h3>
+                        <h4>Caretutors Technology Limited</h4>
+                        <p class="date">December 2024 - Present</p>
+                        <ul>
+                            <li>Teach Python programming to students of various levels through online and in-person sessions</li>
+                            <li>Design personalized learning plans, exercises, and real-life problem-solving tasks to strengthen students' coding skills</li>
+                            <li>Help students understand programming logic, data structures, and core Python concepts using project-based approaches</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="section">
+                    <h2 class="section-title">Projects</h2>
+                    
+                    <div class="project-item">
+                        <h3>Time-Series Forecasting of Stock Prices</h3>
+                        <p>Comparative analysis using ARIMA and LSTM models for stock price prediction. Implemented data preprocessing, trend analysis, and model tuning to improve forecasting accuracy.</p>
+                        <p><strong>Technologies:</strong> Python, Pandas, NumPy, TensorFlow, Matplotlib</p>
+                        <a href="https://tinyurl.com/59uzaj9r" target="_blank" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                    <div class="project-item">
+                        <h3>3D-Ball-Roller Game</h3>
+                        <p>Designed and developed a 3D game using Python and OpenGL that simulates catching falling diamonds with real-time movement and collision logic. Implemented score tracking, event handling, and keyboard controls.</p>
+                        <p><strong>Technologies:</strong> Python, OpenGL</p>
+                        <a href="https://github.com/saifibnaezhararko/CSE423_Lab-Project-3D-Ball-Roller" target="_blank" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                    <div class="project-item">
+                        <h3>Monkeypox Detection Using EfficientNetB3</h3>
+                        <p>Developed a deep learning model for classifying Monkeypox from skin lesion images using transfer learning. Applied data augmentation and regularization techniques to achieve high accuracy and assist medical diagnostics.</p>
+                        <p><strong>Technologies:</strong> TensorFlow, Keras, EfficientNetB3</p>
+                        <a href="https://tinyurl.com/auvvjkdh" target="_blank" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+
+                    <div class="project-item">
+                        <h3>Quantum Topic Modeling</h3>
+                        <p>Contributed to a hybrid quantum-classical topic modeling project combining quantum variational circuits with classical ML techniques. Implemented text preprocessing, tokenization, and integration with quantum outputs.</p>
+                        <p><strong>Technologies:</strong> Python, Qiskit, Quantum Computing</p>
+                        <a href="https://github.com/saifibnaezhararko/QVTM/tree/main" target="_blank" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </section>
+
+                <!-- Extracurricular Activities -->
+                <section class="section">
+                    <h2 class="section-title">Extracurricular Activities</h2>
+                    
+                    <div class="experience-item">
+                        <h3>Founder and Mentor</h3>
+                        <h4>QWorld's QBangladesh</h4>
+                        <ul>
+                            <li>Teach quantum computing simulation using Python, Qiskit, and Cirq to new learners in Bangladesh</li>
+                            <li>Conduct training sessions and hands-on exercises on quantum circuits and gates</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Research Intern</h3>
+                        <h4>QWorld Global Internship (QIntern25)</h4>
+                        <ul>
+                            <li>Working on "Design of Quantum-Anamorphic Encryption Against Coercive Surveillance"</li>
+                            <li>Collaborating with international researchers on advanced quantum cryptography topics</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Achievements -->
+                <section class="section">
+                    <h2 class="section-title">Achievements and Events</h2>
+                    <ul>
+                        <li>Selected for <strong>QIntern25</strong>, QWorld's prestigious global flagship internship</li>
+                        <li>Project recognized as the <strong>3rd best project</strong> among all QIntern25 teams</li>
+                        <li>Helped multiple students complete quantum programs as a mentor</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Technical Skills -->
+                <section class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <div>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Libraries & Frameworks</h4>
+                        <div>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Keras</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Quantum Computing</h4>
+                        <div>
+                            <span class="skill-tag">Qiskit</span>
+                            <span class="skill-tag">Cirq</span>
+                            <span class="skill-tag">Quantum Simulation</span>
+                            <span class="skill-tag">Quantum Cryptography</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Tools & Technologies</h4>
+                        <div>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">OpenGL</span>
+                            <span class="skill-tag">LaTeX</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="section">
+                    <h2 class="section-title">Certifications</h2>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="margin-bottom: 12px;">✓ Introduction to Quantum Computing - The Coding School</li>
+                        <li style="margin-bottom: 12px;">✓ QWorld's QSilver26 Workshop</li>
+                        <li style="margin-bottom: 12px;">✓ Ingenii Quantum Machine Learning Fundamentals</li>
+                        <li style="margin-bottom: 12px;">✓ QCOURSE 501-2: Elements of Quantum Computing</li>
+                        <li style="margin-bottom: 12px;">✓ QWorld's Qbronze144 Workshop</li>
+                    </ul>
+                </section>
+
+                <!-- Soft Skills -->
+                <section class="section">
+                    <h2 class="section-title">Soft Skills</h2>
+                    <div>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Research Orientation</span>
+                        <span class="skill-tag">Self-Motivation</span>
+                        <span class="skill-tag">Leadership</span>
+                    </div>
+                </section>
+
+                <!-- References -->
+                <section class="section">
+                    <h2 class="section-title">References</h2>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4>Shadman Shahriar</h4>
+                        <p style="font-size: 0.9em; color: #666;">Lecturer, BRAC University</p>
+                        <p style="font-size: 0.9em;"><i class="fas fa-envelope"></i> shadman.shahriar@bracu.ac.bd</p>
+                    </div>
+
+                    <div>
+                        <h4>Sowmitra Das</h4>
+                        <p style="font-size: 0.9em; color: #666;">Senior Lecturer, BRAC University</p>
+                        <p style="font-size: 0.9em;"><i class="fas fa-envelope"></i> sowmitra.das@bracu.ac.bd</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
