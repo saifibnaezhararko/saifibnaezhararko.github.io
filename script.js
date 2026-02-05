@@ -1,4 +1,113 @@
 // ===================================
+// Quantum Particle Animation
+// ===================================
+const canvas = document.getElementById('quantumCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+class QuantumParticle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.color = this.getQuantumColor();
+        this.opacity = Math.random() * 0.5 + 0.3;
+        this.pulseSpeed = Math.random() * 0.02 + 0.01;
+        this.pulsePhase = Math.random() * Math.PI * 2;
+    }
+
+    getQuantumColor() {
+        const colors = [
+            'rgba(99, 102, 241,',    // Indigo
+            'rgba(139, 92, 246,',    // Purple
+            'rgba(236, 72, 153,',    // Pink
+            'rgba(59, 130, 246,',    // Blue
+            'rgba(167, 139, 250,'    // Light Purple
+        ];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+
+        this.pulsePhase += this.pulseSpeed;
+        this.currentOpacity = this.opacity + Math.sin(this.pulsePhase) * 0.3;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + this.currentOpacity + ')';
+        ctx.fill();
+        
+        // Quantum glow effect
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + (this.currentOpacity * 0.1) + ')';
+        ctx.fill();
+    }
+}
+
+// Create quantum particles
+const particles = [];
+const particleCount = 100;
+
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new QuantumParticle());
+}
+
+// Draw quantum connections
+function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(99, 102, 241, ${(1 - distance / 150) * 0.15})`;
+                ctx.lineWidth = 0.5;
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+// Animation loop
+function animateQuantum() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+    
+    drawConnections();
+    
+    requestAnimationFrame(animateQuantum);
+}
+
+animateQuantum();
+
+// ===================================
 // Mobile Navigation Toggle
 // ===================================
 const hamburger = document.querySelector('.hamburger');
