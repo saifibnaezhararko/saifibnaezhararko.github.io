@@ -27,11 +27,11 @@ class QuantumParticle {
 
     getQuantumColor() {
         const colors = [
-            'rgba(99, 102, 241,',    // Indigo
-            'rgba(139, 92, 246,',    // Purple
-            'rgba(236, 72, 153,',    // Pink
-            'rgba(59, 130, 246,',    // Blue
-            'rgba(167, 139, 250,'    // Light Purple
+            'rgba(0, 240, 255,',     // Cyan
+            'rgba(168, 85, 247,',    // Purple
+            'rgba(6, 182, 212,',     // Teal
+            'rgba(34, 211, 238,',    // Light Cyan
+            'rgba(139, 92, 246,'     // Violet
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     }
@@ -81,7 +81,7 @@ function drawConnections() {
 
             if (distance < 150) {
                 ctx.beginPath();
-                ctx.strokeStyle = `rgba(99, 102, 241, ${(1 - distance / 150) * 0.15})`;
+                ctx.strokeStyle = `rgba(0, 240, 255, ${(1 - distance / 150) * 0.2})`;
                 ctx.lineWidth = 0.5;
                 ctx.moveTo(particles[i].x, particles[i].y);
                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -396,25 +396,26 @@ style.textContent = `
     .custom-cursor {
         width: 20px;
         height: 20px;
-        border: 2px solid var(--primary-color);
+        border: 2px solid #00f0ff;
         border-radius: 50%;
         position: fixed;
         pointer-events: none;
         z-index: 9999;
         transition: transform 0.2s ease;
         display: none;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
     }
-    
+
     @media (min-width: 1024px) {
         .custom-cursor {
             display: block;
         }
     }
-    
+
     a:hover ~ .custom-cursor,
     button:hover ~ .custom-cursor {
         transform: scale(1.5);
-        background: rgba(99, 102, 241, 0.2);
+        background: rgba(0, 240, 255, 0.15);
     }
 `;
 document.head.appendChild(style);
@@ -422,9 +423,9 @@ document.head.appendChild(style);
 // ===================================
 // Console Message
 // ===================================
-console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #667eea;');
-console.log('%cThanks for checking out my portfolio!', 'font-size: 14px; color: #6b7280;');
-console.log('%cBuilt with ❤️ by Saif', 'font-size: 12px; color: #ec4899;');
+console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #00f0ff;');
+console.log('%cThanks for checking out my portfolio!', 'font-size: 14px; color: #94a3b8;');
+console.log('%cBuilt with ❤️ by Saif', 'font-size: 12px; color: #a855f7;');
 
 // ===================================
 // Dynamic Year in Footer
@@ -461,10 +462,12 @@ emailLinks.forEach(link => {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color);
-            color: white;
+            background: rgba(0, 240, 255, 0.15);
+            color: #00f0ff;
             padding: 10px 20px;
             border-radius: 8px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            backdrop-filter: blur(10px);
             z-index: 10000;
             animation: slideDown 0.3s ease;
         `;
