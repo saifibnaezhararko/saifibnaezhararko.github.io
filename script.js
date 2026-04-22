@@ -281,3 +281,21 @@ const footerText = document.querySelector(".footer-content p");
 if (footerText) {
     footerText.textContent = footerText.textContent.replace("2025", String(new Date().getFullYear()));
 }
+
+const profileImage = document.getElementById("profileImage");
+if (profileImage) {
+    const fallbackSources = [
+        "./profile.jpeg?v=20260422",
+        "./profile.jpg?v=20260422",
+        "profile.jpeg?v=20260422",
+        "profile.jpg?v=20260422"
+    ];
+    let sourceIndex = 0;
+
+    profileImage.addEventListener("error", () => {
+        sourceIndex += 1;
+        if (sourceIndex < fallbackSources.length) {
+            profileImage.src = fallbackSources[sourceIndex];
+        }
+    });
+}
