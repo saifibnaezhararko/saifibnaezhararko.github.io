@@ -294,6 +294,10 @@ section {
     gap: 62px;
 }
 
+.hero-text {
+    padding-left: clamp(10px, 2.2vw, 30px);
+}
+
 .hero-status {
     display: inline-flex;
     align-items: center;
@@ -1507,6 +1511,7 @@ section {
 
     .hero-text {
         text-align: center;
+        padding-left: 0;
     }
 
     .hero-buttons,
