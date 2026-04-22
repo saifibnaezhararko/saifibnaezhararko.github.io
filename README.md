@@ -93,12 +93,12 @@ const titles = [
 
 ## 📸 Profile Picture যোগ করতে
 
-1. আপনার profile picture file কে `profile.jpg` নাম দিয়ে repository তে upload করুন
+1. আপনার profile picture file কে `profile.jpeg` নাম দিয়ে repository তে upload করুন
 2. `index.html` file এ `.image-placeholder` div replace করুন:
 
 ```html
 <div class="image-placeholder">
-    <img src="profile.jpg" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+    <img src="profile.jpeg" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
 </div>
 ```
 
