@@ -452,6 +452,14 @@ section {
     gap: 10px;
 }
 
+.hero .social-links {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1203;
+    pointer-events: auto;
+}
+
 .social-link,
 .contact-social-link {
     width: 44px;
@@ -1504,6 +1512,12 @@ section {
     .hero-buttons,
     .social-links {
         justify-content: center;
+    }
+
+    .hero .social-links {
+        left: 12px;
+        bottom: 12px;
+        justify-content: flex-start;
     }
 
     .hero-description {
