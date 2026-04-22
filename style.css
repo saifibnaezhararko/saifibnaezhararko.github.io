@@ -1,7 +1,8 @@
 * {
     margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
+    padding: 0;
 }
 
 :root {
@@ -292,6 +293,10 @@ section {
     grid-template-columns: 1.05fr 0.95fr;
     align-items: center;
     gap: 62px;
+}
+
+.hero-text {
+    padding-left: clamp(10px, 2.2vw, 30px);
 }
 
 .hero-status {
@@ -1507,6 +1512,7 @@ section {
 
     .hero-text {
         text-align: center;
+        padding-left: 0;
     }
 
     .hero-buttons,
