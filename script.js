@@ -578,3 +578,37 @@ window.addEventListener('scroll', debounce(() => {
 }));
 
 console.log('%c✨ All animations loaded successfully!', 'font-size: 12px; color: #10b981;');
+
+// ===================================
+// Quantum Renovation Enhancements
+// ===================================
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function updateScrollProgress() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+    document.body.style.setProperty('--scroll-progress', `${Math.min(100, Math.max(0, ratio))}%`);
+}
+
+updateScrollProgress();
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+if (!prefersReducedMotion) {
+    const magneticTargets = document.querySelectorAll('.btn, .contact-social-link, .social-link, .project-link');
+
+    magneticTargets.forEach((target) => {
+        target.addEventListener('mousemove', (event) => {
+            const rect = target.getBoundingClientRect();
+            const dx = event.clientX - (rect.left + rect.width / 2);
+            const dy = event.clientY - (rect.top + rect.height / 2);
+            const offsetX = dx * 0.08;
+            const offsetY = dy * 0.08;
+
+            target.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+
+        target.addEventListener('mouseleave', () => {
+            target.style.transform = '';
+        });
+    });
+}

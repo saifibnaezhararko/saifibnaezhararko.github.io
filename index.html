@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Saif Ibna Ezhar Arko - Portfolio CV</title>
+    <title>SK Saif Ibna Ezhar Arko — Quantum Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,6 +13,26 @@
     <div class="animated-bg">
         <canvas id="quantumCanvas"></canvas>
         <div class="quantum-grid"></div>
+        <div class="quantum-circuit-overlay">
+            <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+                <line x1="0" y1="150" x2="1200" y2="150" stroke="rgba(0,240,255,0.08)" stroke-width="1"/>
+                <line x1="0" y1="300" x2="1200" y2="300" stroke="rgba(168,85,247,0.08)" stroke-width="1"/>
+                <line x1="0" y1="450" x2="1200" y2="450" stroke="rgba(0,240,255,0.08)" stroke-width="1"/>
+                <line x1="0" y1="600" x2="1200" y2="600" stroke="rgba(168,85,247,0.08)" stroke-width="1"/>
+                <rect x="200" y="135" width="30" height="30" fill="none" stroke="rgba(0,240,255,0.2)" stroke-width="1"/>
+                <text x="215" y="155" fill="rgba(0,240,255,0.3)" font-size="14" text-anchor="middle" font-family="monospace">H</text>
+                <rect x="500" y="285" width="30" height="30" fill="none" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+                <text x="515" y="305" fill="rgba(168,85,247,0.3)" font-size="14" text-anchor="middle" font-family="monospace">X</text>
+                <rect x="800" y="435" width="30" height="30" fill="none" stroke="rgba(0,240,255,0.2)" stroke-width="1"/>
+                <text x="815" y="455" fill="rgba(0,240,255,0.3)" font-size="14" text-anchor="middle" font-family="monospace">Z</text>
+                <circle cx="350" cy="300" r="6" fill="none" stroke="rgba(168,85,247,0.25)" stroke-width="1"/>
+                <line x1="350" y1="150" x2="350" y2="306" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+                <circle cx="350" cy="150" r="3" fill="rgba(0,240,255,0.3)"/>
+                <circle cx="950" cy="450" r="6" fill="none" stroke="rgba(0,240,255,0.25)" stroke-width="1"/>
+                <line x1="950" y1="300" x2="950" y2="456" stroke="rgba(0,240,255,0.2)" stroke-width="1"/>
+                <circle cx="950" cy="300" r="3" fill="rgba(168,85,247,0.3)"/>
+            </svg>
+        </div>
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
@@ -22,16 +42,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
+                <span class="logo-bracket">|</span>
                 <span class="logo-text">Saif</span>
-                <span class="logo-dot">.</span>
+                <span class="logo-bracket">⟩</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home" class="nav-link active"><span class="nav-num">00</span>Home</a></li>
+                <li><a href="#about" class="nav-link"><span class="nav-num">01</span>About</a></li>
+                <li><a href="#experience" class="nav-link"><span class="nav-num">02</span>Experience</a></li>
+                <li><a href="#projects" class="nav-link"><span class="nav-num">03</span>Projects</a></li>
+                <li><a href="#skills" class="nav-link"><span class="nav-num">04</span>Skills</a></li>
+                <li><a href="#contact" class="nav-link"><span class="nav-num">05</span>Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -46,14 +67,19 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-greeting">Hello, I'm</p>
-                    <h1 class="hero-name">SK Saif Ibna Ezhar <span class="gradient-text">Arko</span></h1>
+                    <div class="hero-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">QUANTUM_STATE: SUPERPOSITION</span>
+                    </div>
+                    <p class="hero-greeting">&lt; Hello World /&gt; — I am</p>
+                    <h1 class="hero-name" data-text="SK Saif Ibna Ezhar Arko">SK Saif Ibna Ezhar <span class="gradient-text">Arko</span></h1>
                     <div class="hero-titles">
+                        <span class="prompt-char">&gt;_</span>
                         <p class="typing-text"></p>
                     </div>
                     <p class="hero-description">
-                        Passionate about Quantum Computing and AI, specializing in Machine Learning and Quantum Information Theory. 
-                        Building the future of computational intelligence.
+                        Passionate about <span class="inline-highlight">Quantum Computing</span> and <span class="inline-highlight">AI</span>, specializing in Machine Learning and Quantum Information Theory.
+                        Building the future of computational intelligence — one qubit at a time.
                     </p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">
@@ -66,32 +92,47 @@
                         </a>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com/saifibnaezhararko" target="_blank" class="social-link">
+                        <a href="https://github.com/saifibnaezhararko" target="_blank" class="social-link" data-tooltip="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/sk-saif-ibna-ezhar-arko-0140aa203" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/sk-saif-ibna-ezhar-arko-0140aa203" target="_blank" class="social-link" data-tooltip="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=61584500614733" target="_blank" class="social-link">
+                        <a href="https://www.facebook.com/profile.php?id=61584500614733" target="_blank" class="social-link" data-tooltip="Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/_g_u_t_u?igsh=b2V6MXFtZnUwdDdu" target="_blank" class="social-link">
+                        <a href="https://www.instagram.com/_g_u_t_u?igsh=b2V6MXFtZnUwdDdu" target="_blank" class="social-link" data-tooltip="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/8801600152614" target="_blank" class="social-link">
+                        <a href="https://wa.me/8801600152614" target="_blank" class="social-link" data-tooltip="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://scholar.google.com/citations?user=xLpMNXQAAAAJ&hl=en" target="_blank" class="social-link">
+                        <a href="https://scholar.google.com/citations?user=xLpMNXQAAAAJ&hl=en" target="_blank" class="social-link" data-tooltip="Scholar">
                             <i class="fas fa-graduation-cap"></i>
                         </a>
-                        <a href="mailto:saifibnaezhararko1@gmail.com" class="social-link">
+                        <a href="mailto:saifibnaezhararko1@gmail.com" class="social-link" data-tooltip="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="image-frame">
-                        <img src="profile.jpg" alt="SK Saif Ibna Ezhar Arko">
+                    <div class="bloch-sphere">
+                        <div class="orbit orbit-x"></div>
+                        <div class="orbit orbit-y"></div>
+                        <div class="orbit orbit-z"></div>
+                        <div class="qubit-label qubit-top">|0⟩</div>
+                        <div class="qubit-label qubit-bottom">|1⟩</div>
+                        <div class="qubit-label qubit-left">|−⟩</div>
+                        <div class="qubit-label qubit-right">|+⟩</div>
+                        <div class="image-frame">
+                            <div class="frame-inner">
+                                <img src="profile.jpg" alt="SK Saif Ibna Ezhar Arko">
+                            </div>
+                            <span class="corner corner-tl"></span>
+                            <span class="corner corner-tr"></span>
+                            <span class="corner corner-bl"></span>
+                            <span class="corner corner-br"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,30 +149,48 @@
     <section id="about" class="section about-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">01.</span>
+                <span class="section-number">|01⟩</span>
                 <h2 class="section-title">About Me</h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-intro">
-                        I'm a final-year Computer Science student at BRAC University with a strong passion for 
-                        <span class="highlight">Quantum Computing</span> and <span class="highlight">Artificial Intelligence</span>.
-                    </p>
-                    <p>
-                        Over the past few years, I've delved deep into quantum variational algorithms and machine learning. 
-                        My journey combines rigorous academic training with hands-on experience in Python development, 
-                        quantum simulation, and deep learning applications.
-                    </p>
-                    <p>
-    Currently, I'm working as a <strong>Software Developer (AI) at Datasoft Systems Bangladesh Limited</strong>, 
-    after being promoted from AI Intern. I also serve as a <strong>Python Tutor at Caretutors</strong>, 
-    while founding, coordinating, and mentoring <strong>QBangladesh</strong> - leading Bangladesh's quantum computing education ecosystem.
-</p>
-                    <p>
-                        <strong>Date of Birth:</strong> 5th January 2002 | <strong>Location:</strong> 14 Bonogram Road, Wari, Dhaka 1203
-                    </p>
-                    
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">arko@quantum:~ $ whoami</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="about-intro">
+                                I'm a final-year Computer Science student at BRAC University with a strong passion for
+                                <span class="highlight">Quantum Computing</span> and <span class="highlight">Artificial Intelligence</span>.
+                            </p>
+                            <p>
+                                Over the past few years, I've delved deep into quantum variational algorithms and machine learning.
+                                My journey combines rigorous academic training with hands-on experience in Python development,
+                                quantum simulation, and deep learning applications.
+                            </p>
+                            <p>
+                                Currently, I'm working as a <strong>Software Developer (AI) at Datasoft Systems Bangladesh Limited</strong>,
+                                after being promoted from AI Intern. I also serve as a <strong>Python Tutor at Caretutors</strong>,
+                                while founding, coordinating, and mentoring <strong>QBangladesh</strong> — leading Bangladesh's quantum computing education ecosystem.
+                            </p>
+                            <div class="meta-info">
+                                <div class="meta-item">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <span><strong>DOB:</strong> 5 Jan 2002</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-location-dot"></i>
+                                    <span><strong>Location:</strong> 14 Bonogram Road, Wari, Dhaka 1203</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title"><span class="subsection-prefix">//</span> Education</h3>
                     <div class="education-highlights">
                         <div class="edu-item">
                             <div class="edu-icon">
@@ -141,7 +200,7 @@
                                 <h4>B.Sc. in CSE</h4>
                                 <p>BRAC University</p>
                                 <span class="edu-year">CGPA: 3.2 | Sept 2025</span>
-                                <p style="font-size: 0.85em; margin-top: 5px; color: var(--text-secondary);">Thesis: Quantum-Aware Image Encoding and Adversarial Perturbation</p>
+                                <p class="edu-thesis">Thesis: Quantum-Aware Image Encoding and Adversarial Perturbation</p>
                             </div>
                         </div>
                         <div class="edu-item">
@@ -149,7 +208,7 @@
                                 <i class="fas fa-award"></i>
                             </div>
                             <div class="edu-info">
-                                <h4>HSC - Science</h4>
+                                <h4>HSC — Science</h4>
                                 <p>Notre Dame College</p>
                                 <span class="edu-year">GPA 5.00 | 2020</span>
                             </div>
@@ -159,8 +218,8 @@
                                 <i class="fas fa-award"></i>
                             </div>
                             <div class="edu-info">
-                                <h4>SSC - Science</h4>
-                                <p>St Gregory's High School & College</p>
+                                <h4>SSC — Science</h4>
+                                <p>St Gregory's High School &amp; College</p>
                                 <span class="edu-year">GPA 5.00 | 2018</span>
                             </div>
                         </div>
@@ -168,6 +227,7 @@
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
+                        <div class="stat-qstate">|ψ₁⟩</div>
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -176,6 +236,7 @@
                         <span class="stat-sublabel">QIntern25</span>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-qstate">|ψ₂⟩</div>
                         <div class="stat-icon">
                             <i class="fas fa-code"></i>
                         </div>
@@ -184,6 +245,7 @@
                         <span class="stat-sublabel">Completed</span>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-qstate">|ψ₃⟩</div>
                         <div class="stat-icon">
                             <i class="fas fa-certificate"></i>
                         </div>
@@ -200,17 +262,21 @@
     <section id="experience" class="section experience-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">02.</span>
+                <span class="section-number">|02⟩</span>
                 <h2 class="section-title">Experience</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">H</span></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">Mar 2026 - Present</span>
+                        <span class="timeline-date">Mar 2026 — Present</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
                                 <h3>Software Developer</h3>
                                 <span class="company">Datasoft Systems Bangladesh Limited</span>
@@ -229,10 +295,14 @@
                 </div>
 
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">X</span></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">Dec 2025 - Feb 2026</span>
+                        <span class="timeline-date">Dec 2025 — Feb 2026</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
                                 <h3>Artificial Intelligence Intern</h3>
                                 <span class="company">Datasoft Systems Bangladesh Limited</span>
@@ -247,10 +317,14 @@
                 </div>
 
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">Y</span></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">Oct 2025 - Dec 2025</span>
+                        <span class="timeline-date">Oct 2025 — Dec 2025</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
                                 <h3>Python Developer Intern</h3>
                                 <span class="company">Maxcode Lab</span>
@@ -271,10 +345,14 @@
                 </div>
 
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">Z</span></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">Dec 2024 - Present</span>
+                        <span class="timeline-date">Dec 2024 — Present</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
                                 <h3>Verified Python Tutor</h3>
                                 <span class="company">Caretutors Technology Limited</span>
@@ -294,12 +372,16 @@
                 </div>
 
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="250">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">S</span></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2024 - Present</span>
+                        <span class="timeline-date">2024 — Present</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
-                                <h3>Founder, Coordinator & Mentor</h3>
+                                <h3>Founder, Coordinator &amp; Mentor</h3>
                                 <span class="company">QWorld's QBangladesh</span>
                             </div>
                             <ul class="timeline-list">
@@ -317,10 +399,14 @@
                 </div>
 
                 <div class="timeline-item" data-aos="fade-up" data-aos-delay="350">
-                    <div class="timeline-marker"></div>
+                    <div class="timeline-marker"><span class="gate-symbol">T</span></div>
                     <div class="timeline-content">
                         <span class="timeline-date">2025</span>
                         <div class="timeline-card">
+                            <div class="card-corner tl"></div>
+                            <div class="card-corner tr"></div>
+                            <div class="card-corner bl"></div>
+                            <div class="card-corner br"></div>
                             <div class="card-header">
                                 <h3>Research Intern</h3>
                                 <span class="company">QWorld Global Internship (QIntern25)</span>
@@ -345,13 +431,14 @@
     <section id="projects" class="section projects-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">03.</span>
+                <span class="section-number">|03⟩</span>
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="projects-grid">
                 <div class="project-card" data-aos="fade-up">
+                    <div class="project-tag-top">001</div>
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -362,13 +449,14 @@
                         </div>
                         <div class="project-placeholder">
                             <i class="fas fa-atom"></i>
+                            <div class="project-rings"><span></span><span></span><span></span></div>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-type">Quantum Computing</span>
                         <h3 class="project-title">Quantum Topic Modeling</h3>
                         <p class="project-description">
-                            Hybrid quantum-classical topic modeling combining quantum variational circuits with 
+                            Hybrid quantum-classical topic modeling combining quantum variational circuits with
                             classical ML techniques for text analysis and topic extraction.
                         </p>
                         <div class="project-tech">
@@ -381,6 +469,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-tag-top">002</div>
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -391,13 +480,14 @@
                         </div>
                         <div class="project-placeholder">
                             <i class="fas fa-chart-line"></i>
+                            <div class="project-rings"><span></span><span></span><span></span></div>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-type">Machine Learning</span>
                         <h3 class="project-title">Stock Price Forecasting</h3>
                         <p class="project-description">
-                            Comparative analysis of ARIMA and LSTM models for time-series stock price prediction 
+                            Comparative analysis of ARIMA and LSTM models for time-series stock price prediction
                             with advanced preprocessing and visualization.
                         </p>
                         <div class="project-tech">
@@ -410,6 +500,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-tag-top">003</div>
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -420,13 +511,14 @@
                         </div>
                         <div class="project-placeholder">
                             <i class="fas fa-brain"></i>
+                            <div class="project-rings"><span></span><span></span><span></span></div>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-type">Deep Learning</span>
                         <h3 class="project-title">Monkeypox Detection</h3>
                         <p class="project-description">
-                            Medical image classification using EfficientNetB3 with transfer learning for 
+                            Medical image classification using EfficientNetB3 with transfer learning for
                             accurate Monkeypox detection from skin lesion images.
                         </p>
                         <div class="project-tech">
@@ -439,6 +531,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-tag-top">004</div>
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -449,13 +542,14 @@
                         </div>
                         <div class="project-placeholder">
                             <i class="fas fa-atom"></i>
+                            <div class="project-rings"><span></span><span></span><span></span></div>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-type">Quantum Machine Learning</span>
                         <h3 class="project-title">Hybrid Quantum CNN (HQCNN)</h3>
                         <p class="project-description">
-                            Developed a Hybrid Quantum Convolutional Neural Network for Monkeypox diagnosis 
+                            Developed a Hybrid Quantum Convolutional Neural Network for Monkeypox diagnosis
                             from skin lesion images, comparing performance against classical CNN architectures.
                         </p>
                         <div class="project-tech">
@@ -468,6 +562,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-tag-top">005</div>
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
@@ -478,13 +573,14 @@
                         </div>
                         <div class="project-placeholder">
                             <i class="fas fa-gamepad"></i>
+                            <div class="project-rings"><span></span><span></span><span></span></div>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-type">Game Development</span>
                         <h3 class="project-title">3D Ball Roller Game</h3>
                         <p class="project-description">
-                            Interactive 3D game built with Python and OpenGL featuring real-time collision 
+                            Interactive 3D game built with Python and OpenGL featuring real-time collision
                             detection, physics simulation, and dynamic gameplay.
                         </p>
                         <div class="project-tech">
@@ -503,11 +599,11 @@
     <section id="skills" class="section skills-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Skills & Expertise</h2>
+                <span class="section-number">|04⟩</span>
+                <h2 class="section-title">Skills &amp; Expertise</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="skills-container">
                 <div class="skills-category" data-aos="fade-right">
                     <div class="category-header">
@@ -557,7 +653,7 @@
                 <div class="skills-category" data-aos="fade-right" data-aos-delay="100">
                     <div class="category-header">
                         <i class="fas fa-brain"></i>
-                        <h3>Machine Learning & AI</h3>
+                        <h3>Machine Learning &amp; AI</h3>
                     </div>
                     <div class="skills-list">
                         <div class="skill-item">
@@ -647,7 +743,7 @@
                 <div class="skills-category" data-aos="fade-right" data-aos-delay="300">
                     <div class="category-header">
                         <i class="fas fa-tools"></i>
-                        <h3>Tools & Technologies</h3>
+                        <h3>Tools &amp; Technologies</h3>
                     </div>
                     <div class="skills-list">
                         <div class="skill-item">
@@ -692,35 +788,47 @@
 
             <!-- Certifications -->
             <div class="certifications" data-aos="fade-up">
-                <h3 class="cert-title">Certifications</h3>
+                <h3 class="cert-title"><span class="subsection-prefix">//</span> Certifications</h3>
                 <div class="cert-grid">
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>Introduction to Quantum Computing</p>
                         <span>The Coding School</span>
                     </div>
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>QWorld's QSilver26 Workshop</p>
                         <span>QWorld</span>
                     </div>
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>Quantum ML Fundamentals</p>
                         <span>Ingenii</span>
                     </div>
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>Elements of Quantum Computing</p>
                         <span>QCOURSE 501-2</span>
                     </div>
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>QWorld's Qbronze144 Workshop</p>
                         <span>QWorld</span>
                     </div>
                     <div class="cert-card">
-                        <i class="fas fa-certificate"></i>
+                        <div class="hex-wrap">
+                            <i class="fas fa-certificate"></i>
+                        </div>
                         <p>Diploma in Quantum Anamorphic Encryption</p>
                         <span>QIntern 2025, QWorld</span>
                     </div>
@@ -733,17 +841,17 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">05.</span>
+                <span class="section-number">|05⟩</span>
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="contact-content">
                 <div class="contact-text" data-aos="fade-right">
-                    <h3>Let's Work Together</h3>
+                    <h3>Let's Entangle &amp; Collaborate</h3>
                     <p>
-                        I'm currently looking for AI/ML opportunities and quantum computing research positions. 
-                        Whethier you have a question, want to collaborate, or just want to say hi, I'll do my best to get back to you!
+                        I'm currently looking for AI/ML opportunities and quantum computing research positions.
+                        Whether you have a question, want to collaborate, or just want to say hi — I'll do my best to get back to you!
                     </p>
                     <div class="contact-info-list">
                         <div class="contact-info-item">
@@ -796,45 +904,58 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="contact-card" data-aos="fade-left">
                     <div class="card-decoration"></div>
-                    <h4>Quick Contact</h4>
+                    <h4><span class="subsection-prefix">//</span> Quick Contact</h4>
                     <div class="quick-links">
                         <a href="mailto:saifibnaezhararko1@gmail.com" class="quick-link">
                             <i class="fas fa-envelope"></i>
                             <span>Send Email</span>
+                            <i class="fas fa-arrow-right arrow-right"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/sk-saif-ibna-ezhar-arko-0140aa203" target="_blank" class="quick-link">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn Profile</span>
+                            <i class="fas fa-arrow-right arrow-right"></i>
                         </a>
                         <a href="https://github.com/saifibnaezhararko" target="_blank" class="quick-link">
                             <i class="fab fa-github"></i>
                             <span>GitHub Profile</span>
+                            <i class="fas fa-arrow-right arrow-right"></i>
                         </a>
                         <a href="https://scholar.google.com/citations?user=xLpMNXQAAAAJ&hl=en" target="_blank" class="quick-link">
                             <i class="fas fa-graduation-cap"></i>
                             <span>Google Scholar</span>
+                            <i class="fas fa-arrow-right arrow-right"></i>
                         </a>
                     </div>
-                    
+
                     <div class="references">
-                        <h5>References</h5>
+                        <h5><span class="subsection-prefix">//</span> References</h5>
                         <div class="reference-item">
-                            <h6>Ipshita Bonhi Upoma</h6>
-                            <p>Lecturer, Department of Computer Science and Engineering, School of Data and Sciences, BRAC University</p>
-                            <a href="mailto:ipshita.bonhi.upoma@bracu.ac.bd">ipshita.bonhi.upoma@bracu.ac.bd</a>
+                            <div class="ref-avatar">I</div>
+                            <div class="ref-body">
+                                <h6>Ipshita Bonhi Upoma</h6>
+                                <p>Lecturer, Department of Computer Science and Engineering, School of Data and Sciences, BRAC University</p>
+                                <a href="mailto:ipshita.bonhi.upoma@bracu.ac.bd">ipshita.bonhi.upoma@bracu.ac.bd</a>
+                            </div>
                         </div>
                         <div class="reference-item">
-                            <h6>Sowmitra Das</h6>
-                            <p>Senior Lecturer, BRAC University</p>
-                            <a href="mailto:sowmitra.das@bracu.ac.bd">sowmitra.das@bracu.ac.bd</a>
+                            <div class="ref-avatar">S</div>
+                            <div class="ref-body">
+                                <h6>Sowmitra Das</h6>
+                                <p>Senior Lecturer, BRAC University</p>
+                                <a href="mailto:sowmitra.das@bracu.ac.bd">sowmitra.das@bracu.ac.bd</a>
+                            </div>
                         </div>
                         <div class="reference-item">
-                            <h6>Dr.  Kumar Prateek</h6>
-                            <p>Asst. Professor (Grade-II), NIT Jalandhar</p>
-                            <a href="mailto:kprateek@nitj.ac.in">kprateek@nitj.ac.in</a>
+                            <div class="ref-avatar">K</div>
+                            <div class="ref-body">
+                                <h6>Dr. Kumar Prateek</h6>
+                                <p>Asst. Professor (Grade-II), NIT Jalandhar</p>
+                                <a href="mailto:kprateek@nitj.ac.in">kprateek@nitj.ac.in</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -846,8 +967,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 SK Saif Ibna Ezhar Arko. Built with passion and code.</p>
-                <p class="footer-subtitle">Designed & Developed by Saif</p>
+                <p>&copy; 2025 SK Saif Ibna Ezhar Arko. Built with passion &amp; qubits.</p>
+                <p class="footer-subtitle">Designed &amp; Developed by Saif — |ψ⟩ = α|0⟩ + β|1⟩</p>
             </div>
         </div>
     </footer>
