@@ -855,6 +855,17 @@ section {
     font-size: 0.84rem;
 }
 
+.edu-thesis a {
+    color: var(--accent-4);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(87, 232, 194, 0.55);
+}
+
+.edu-thesis a:hover {
+    color: var(--accent-1);
+    border-bottom-color: var(--accent-1);
+}
+
 .about-stats {
     display: grid;
     gap: 12px;
