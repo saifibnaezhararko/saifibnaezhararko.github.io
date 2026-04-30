@@ -855,15 +855,49 @@ section {
     font-size: 0.84rem;
 }
 
-.edu-thesis a {
-    color: var(--accent-4);
-    text-decoration: none;
-    border-bottom: 1px dashed rgba(87, 232, 194, 0.55);
+.edu-thesis-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.edu-thesis a:hover {
+.thesis-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.74rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid rgba(87, 232, 194, 0.22);
+    background: linear-gradient(135deg, rgba(87, 232, 194, 0.12), rgba(255, 255, 255, 0.03));
+    color: var(--ink-1);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.thesis-link:hover {
+    transform: translateY(-1px);
+    border-color: rgba(87, 232, 194, 0.55);
+    background: linear-gradient(135deg, rgba(87, 232, 194, 0.2), rgba(255, 255, 255, 0.06));
     color: var(--accent-1);
-    border-bottom-color: var(--accent-1);
+}
+
+.thesis-link-doi {
+    color: var(--accent-4);
+}
+
+.thesis-link-scholar {
+    color: var(--ink-1);
+}
+
+.thesis-link:focus-visible {
+    outline: 2px solid var(--accent-1);
+    outline-offset: 2px;
 }
 
 .about-stats {
