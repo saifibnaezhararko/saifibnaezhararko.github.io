@@ -282,6 +282,60 @@ if (footerText) {
     footerText.textContent = footerText.textContent.replace("2025", String(new Date().getFullYear()));
 }
 
+// Dynamic experience durations: recalculated from the real clock on every load,
+// so an ongoing role rolls from "8 mos" to "9 mos" by itself next month.
+function renderDurations() {
+    const now = new Date();
+
+    const parseMonth = (value) => {
+        if (!value) {
+            return null;
+        }
+        if (value.toLowerCase() === "present") {
+            return { year: now.getFullYear(), month: now.getMonth() + 1 };
+        }
+        const [year, month] = value.split("-").map(Number);
+        if (!year) {
+            return null;
+        }
+        return { year, month: month || 1 };
+    };
+
+    const formatDuration = (months) => {
+        const years = Math.floor(months / 12);
+        const rest = months % 12;
+        const parts = [];
+        if (years > 0) {
+            parts.push(`${years} ${years === 1 ? "yr" : "yrs"}`);
+        }
+        if (rest > 0 || years === 0) {
+            parts.push(`${rest} ${rest === 1 ? "mo" : "mos"}`);
+        }
+        return parts.join(" ");
+    };
+
+    document.querySelectorAll("[data-start]").forEach((element) => {
+        const start = parseMonth(element.getAttribute("data-start"));
+        const end = parseMonth(element.getAttribute("data-end") || "present");
+        if (!start || !end) {
+            return;
+        }
+
+        // Inclusive of both the start and the end month (Dec 2025 -> Jul 2026 = 8 mos).
+        const months = (end.year - start.year) * 12 + (end.month - start.month) + 1;
+        if (months < 1) {
+            return;
+        }
+
+        const badge = element.querySelector(".duration-badge") || document.createElement("span");
+        badge.className = "duration-badge";
+        badge.textContent = formatDuration(months);
+        element.appendChild(badge);
+    });
+}
+
+renderDurations();
+
 const profileImage = document.getElementById("profileImage");
 if (profileImage) {
     const fallbackSources = [
