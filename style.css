@@ -462,6 +462,11 @@ section {
     left: 20px;
     bottom: 20px;
     z-index: 1203;
+    /* container is transparent: let clicks through the gaps between buttons */
+    pointer-events: none;
+}
+
+.hero .social-links .social-link {
     pointer-events: auto;
 }
 
@@ -1199,6 +1204,8 @@ section {
     place-items: center;
     font-size: 2.7rem;
     color: rgba(245, 227, 179, 0.88);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .project-rings {
@@ -1238,10 +1245,19 @@ section {
     background: rgba(7, 17, 26, 0.7);
     opacity: 0;
     transition: 0.24s ease;
+    z-index: 2;
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
+}
+
+/* Touch devices never fire :hover, so keep the links visible there */
+@media (hover: none) {
+    .project-overlay {
+        opacity: 1;
+        background: rgba(7, 17, 26, 0.45);
+    }
 }
 
 .project-link {
