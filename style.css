@@ -867,6 +867,60 @@ section {
     margin-top: 10px;
 }
 
+.grades-details {
+    margin-top: 12px;
+    border: 1px solid var(--line-strong, rgba(87, 232, 194, 0.22));
+    border-radius: 10px;
+    background: var(--surface-2, rgba(255, 255, 255, 0.03));
+}
+
+.grades-details summary {
+    cursor: pointer;
+    padding: 10px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-4);
+    list-style-position: inside;
+}
+
+.grades-table-wrap {
+    overflow-x: auto;
+    padding: 0 12px 12px;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    color: var(--ink-2);
+}
+
+.grades-table th,
+.grades-table td {
+    padding: 7px 6px;
+    text-align: left;
+    border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+    white-space: nowrap;
+}
+
+.grades-table th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+}
+
+.grades-table td:last-child,
+.grades-table th:last-child {
+    text-align: right;
+}
+
+.grades-table td:nth-child(3) {
+    white-space: normal;
+}
+
 .thesis-link {
     display: inline-flex;
     align-items: center;
